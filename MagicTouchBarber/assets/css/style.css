@@ -211,9 +211,23 @@ address {
   gap: var(--space-md);
 }
 
-.logo img {
-  height: 50px;
-  width: auto;
+.logo-text {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.logo-text:hover {
+  color: var(--color-primary);
+}
+
+.logo-text:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .main-nav {
@@ -624,12 +638,6 @@ address {
   align-items: start;
 }
 
-@media (min-width: 768px) {
-  .about-content {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
 .about-text h2 {
   margin-top: var(--space-lg);
   color: var(--color-text);
@@ -665,19 +673,6 @@ address {
 
 .value-list strong {
   color: var(--color-text);
-}
-
-.about-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--space-xl);
-}
-
-.about-logo img {
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 12px var(--color-shadow));
 }
 
 /* ============================================
@@ -747,39 +742,29 @@ address {
   gap: var(--space-sm);
 }
 
-.contact-map {
+.contact-location {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 400px;
+  padding: var(--space-lg);
   border: 1px solid var(--color-border);
 }
 
-.map-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: var(--space-xl);
-  text-align: center;
-  color: var(--color-text-muted);
+.contact-location h2 {
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-md);
 }
 
-.map-example {
-  margin-top: var(--space-md);
-  font-size: var(--font-size-sm);
+.location-image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
-.map-example code {
-  display: block;
-  background: var(--color-surface-elevated);
-  padding: var(--space-sm);
-  border-radius: var(--radius-sm);
-  margin-top: var(--space-xs);
-  overflow-x: auto;
-  font-size: var(--font-size-xs);
-  color: var(--color-text-dim);
+.location-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 /* ============================================
